@@ -31,4 +31,4 @@ Herramientas necesarias para el programa:
 
 ## Guía de sintáxis
 
-  Para formatear el texto en este archivo utilizamos la sintáxis de [Markdown]((https://www.markdownguide.org/cheat-sheet/).
+  Para formatear el texto en este archivo utilizamos la sintáxis de [Markdown](https://www.markdownguide.org/cheat-sheet/).
