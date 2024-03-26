@@ -27,7 +27,7 @@ Herramientas necesarias para el programa:
 
   1. Clonar el repositorio.
   2. Navegar a la carpeta scr.
-  3. Ejecutar el archivo primos.py.
+  3. Ejecutar el archivo 'primos.py'.
 
 ## Guía de sintáxis
 
