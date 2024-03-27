@@ -2,15 +2,15 @@ import matplotlib.pyplot as plt
 
 def collatz(n):
     # Inicializa el contador de pasos
-    steps = 0
+    pasos = 0
     while n != 1:
         # Aplica las reglas de la conjetura de Collatz
         if n % 2 == 0:
             n = n // 2
         else:
             n = 3*n + 1
-        steps += 1
-    return steps
+        pasos += 1
+    return pasos
 
 # Inicializa las listas para almacenar los resultados
 nums = []
