@@ -21,12 +21,24 @@ def factorial(desde, hasta):
                 num -= 1
             print("Factorial ",n,"! es ", fact)  # Imprime el valor original de num
 
-if len(sys.argv) <= 2:
+if len(sys.argv) <= 1:
    print("Debe informar un rango de números!")
    sys.exit()
 
-desde = int(sys.argv[1])
-hasta = int(sys.argv[2])
+rango = sys.argv[1]
+if '-' in rango:
+    desde, hasta = rango.split('-')
+    if desde == '':
+        desde = 1
+    else:
+        desde = int(desde)
+    if hasta == '':
+        hasta = 60
+    else:
+        hasta = int(hasta)
+else:
+    desde = 1
+    hasta = int(rango)
 
 factorial(desde, hasta)
 
