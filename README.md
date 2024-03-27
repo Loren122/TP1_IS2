@@ -41,6 +41,6 @@ Herramientas necesarias para el programa:
 ![Conjetura de Collatz](https://github.com/Loren122/TP1_IS2/assets/103795853/5d356ae3-7fa2-4128-b2ab-1bcc413f8758)
 
 
-## Guía de sintáxis
+## Guía de sintaxis
 
-  Para formatear el texto en este archivo utilizamos la sintáxis de [Markdown](https://www.markdownguide.org/cheat-sheet/).
+  Para formatear el texto en este archivo utilizamos la sintaxis de [Markdown](https://www.markdownguide.org/cheat-sheet/).
