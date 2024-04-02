@@ -4,11 +4,11 @@ import openai
 # Se rellena con la API key
 openai.api_key = "api_key" 
 
-userquery = input("Ingrese su consulta: ")
+try:
+    userquery = input("Ingrese su consulta: ")
 
-if not userquery.strip():
-    print("Por favor, ingrese una consulta válida.")
-else:   
+    if not userquery.strip():
+        raise ValueError("Por favor, ingrese una consulta válida.")  
     
     # Se realiza la consulta a través de la API de ChatGPT
     response = openai.ChatCompletion.create(
@@ -30,3 +30,9 @@ else:
     # Se muestra la conversacion entre usuario y chatGPT
     print("You:", userquery)
     print("chatGPT:", response.choices[0].message.content)
+    
+except ValueError as ve:
+    print(f"Error: {ve}")
+
+except Exception as e:
+    print(f"Error inesperado: {e}")
