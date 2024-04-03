@@ -1,4 +1,4 @@
-import openai
+import openai, sys
 
 
 # Se rellena con la API key
@@ -8,6 +8,9 @@ try:
     
     historial = []
     
+    if "--convers" in sys.argv:
+        print("--Modo de conversación activado--")
+    
     while True:
     
         userquery = input("Ingrese su consulta: ")
@@ -15,7 +18,7 @@ try:
         if userquery.strip(): # Se agrega la consulta al historial
             historial.append(userquery)
             
-        elif historial: # Si el historial no esta vacio, se puede acceder a la ultima consulta
+        elif historial: # Si el historial no esta vacío, se puede acceder a la ultima consulta
             userquery = historial[-1]
             
         else:
@@ -37,6 +40,8 @@ try:
         frequency_penalty=0,
         presence_penalty=0
         )
+        
+        
         
         # Se muestra la conversacion entre usuario y chatGPT
         print("You:", userquery)
