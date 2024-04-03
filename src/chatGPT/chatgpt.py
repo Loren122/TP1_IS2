@@ -1,8 +1,8 @@
-import openai, sys
+import openai, sys # Se importan los paquetes necesarios para el programa
 
 
 # Se rellena con la API key
-openai.api_key = "api_key" 
+openai.api_key = "api_key" # Aqui se reemplaza "api_key" por tu clave de API
 
 try:
     
@@ -28,18 +28,18 @@ try:
         
         # Se realiza la consulta a través de la API de ChatGPT
         response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo-0125",
+        model="gpt-3.5-turbo-0125", # Modelo de lenguaje utilizado
         messages=[
         {
         # Consulta del usuario
         "role": "user",
         "content": userquery }
         ],
-        temperature=1,
-        max_tokens=50,
-        top_p=1,
-        frequency_penalty=0,
-        presence_penalty=0
+        temperature=1,  # Parámetro de creatividad del modelo
+        max_tokens=50,  # Máximo número de tokens en la respuesta
+        top_p=1,  # Parámetro de generación de texto
+        frequency_penalty=0,  # Penalización por repetición de palabras
+        presence_penalty=0,  # Penalización por falta de coherencia
         )
         
         # Se almacenan en el buffer las consultas y respuestas 
@@ -50,8 +50,8 @@ try:
         print("You:", userquery)
         print("chatGPT:", response.choices[0].message.content)
     
-except ValueError as ve:
+except ValueError as ve: # Manejo de excepción para consultas inválidas
     print(f"Error: {ve}")
 
 except Exception as e:
-    print(f"Error inesperado: {e}")
+    print(f"Error inesperado: {e}") # Manejo de excepción para otros errores
