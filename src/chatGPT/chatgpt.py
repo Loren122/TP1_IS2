@@ -6,7 +6,8 @@ openai.api_key = "api_key"
 
 try:
     
-    historial = []
+    historial = [] # Almacena consultas
+    buffer = [] # Almacena consultas y respuestas
     
     if "--convers" in sys.argv:
         print("--Modo de conversación activado--")
@@ -18,7 +19,7 @@ try:
         if userquery.strip(): # Se agrega la consulta al historial
             historial.append(userquery)
             
-        elif historial: # Si el historial no esta vacío, se puede acceder a la ultima consulta
+        elif historial: # Si el historial no está vacío, se puede acceder a la ultima consulta
             userquery = historial[-1]
             
         else:
@@ -35,15 +36,17 @@ try:
         "content": userquery }
         ],
         temperature=1,
-        max_tokens=1000,
+        max_tokens=50,
         top_p=1,
         frequency_penalty=0,
         presence_penalty=0
         )
         
+        # Se almacenan en el buffer las consultas y respuestas 
+        buffer.append(userquery)
+        buffer.append(response.choices[0].message.content)
         
-        
-        # Se muestra la conversacion entre usuario y chatGPT
+        # Se muestra la conversación entre usuario y chatGPT
         print("You:", userquery)
         print("chatGPT:", response.choices[0].message.content)
     
